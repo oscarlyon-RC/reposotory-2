@@ -28,6 +28,6 @@ services:
     environment:
       PMA_HOST: db
       PMA_PORT: 3306
-      MYSQL_ROOT_PASSWORD: ENTER_YOUR_PASSWORD
+      MYSQL_ROOT_PASSWORD: OscarlyonGithub
     volumes:
       - ./phpmyadmin-config.php:/etc/phpmyadmin/config.user.inc.php
