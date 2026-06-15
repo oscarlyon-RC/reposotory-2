@@ -15,8 +15,8 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ENTER_YOUR_PASSWORD
-      MYSQL_DATABASE: YOUR_DATABASE
+      MYSQL_ROOT_PASSWORD: OscarlyonGithub
+      MYSQL_DATABASE: oscar_Db
     ports:
       - "3306:3306"
 
