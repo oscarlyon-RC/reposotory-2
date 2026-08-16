@@ -1,12 +1,12 @@
 {
-    "name": "Formula 1",
+    "name": "F1 Tracker",
     "dockerComposeFile": "../docker-compose.yml",
     "service": "web",
     "workspaceFolder": "/var/www/html",
     "forwardPorts": [8080, 8081, 3306],
     "portsAttributes": {
         "8080": {
-            "label": "Formula 1 (web)",
+            "label": "F1 Tracker (web)",
             "onAutoForward": "openPreview",
             "visibility": "public"
         },
@@ -14,5 +14,5 @@
             "label": "phpMyAdmin"
         }
     },
-    "postCreateCommand": "echo 'Formula 1 is ready. Open the forwarded port 8080 to view it.'"
+    "postCreateCommand": "echo 'F1 Tracker is ready. Open the forwarded port 8080 to view it.'"
 }
