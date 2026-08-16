@@ -15,13 +15,13 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      MYSQL_DATABASE: gearout
+      MYSQL_DATABASE: recent_races
     volumes:
       # Runs automatically the FIRST time this container's data volume is
       # created — creates the loans/monitors tables and seed data without
       # needing to run schema.sql by hand.
       - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
-      - gearout_db_data:/var/lib/mysql
+      - recent_races_db_data:/var/lib/mysql
     ports:
       - "3306:3306"
 
