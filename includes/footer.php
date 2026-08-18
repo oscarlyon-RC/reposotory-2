@@ -1,6 +1,6 @@
 <footer class="site-footer mt-5 text-center">
     <div class="card-footer text-body-secondary py-3">
-        Gear Out — PE equipment loan tracker
+        F1 tracker, see whats happeining in F1, live 
     </div>
 </footer>
 
