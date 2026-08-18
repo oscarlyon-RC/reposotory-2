@@ -3,7 +3,7 @@
 // Named to match the class template convention (conn_1dt.php),
 // but built with PDO + prepared statements throughout the rest of the site.
 $host = 'db';
-$dbname = 'recent_races';
+$dbname = 'F1_tracker';
 $user = 'root';
 $pass = getenv('DB_ROOT_PASSWORD');
 $charset = 'utf8mb4';

@@ -1,11 +1,11 @@
 <?php
 session_start();
-$page_title = "Race results";
+$page_title = "World Championship";
 require('includes/conn_1dt.php');
 
 // Anyone can see this page — no auth_check here. Only logging or
 // returning a loan requires being signed in.
-$stmt = $pdo->query("SELECT * FROM recent_races");
+$stmt = $pdo->query("SELECT * FROM wdc");
 $loans = $stmt->fetchAll();
 
 include('includes/header.php');
@@ -17,7 +17,7 @@ include('includes/nav.php');
         <div class="col-sm-10">
             <h1 class="pt-5 pb-4 text-center">Current loans</h1>
 
-            <?php if ($recent_races): ?>
+            <?php if ($wdc): ?>
                 <p class="text-center">No results avalible</p>
             <?php else: ?>
                 <div class="pb-4">
@@ -26,11 +26,10 @@ include('includes/nav.php');
                 <table class="table table-hover" id="myTable">
                     <thead>
                         <tr>
-                            <th scope="col">race number</th>
-                            <th scope="col">race name</th>
-                            <th scope="col">winner</th>
-                            <th scope="col">Second</th>
-                            <th scope="col">third</th>
+                            <th scope="col">championship position</th>
+                            <th scope="col">name</th>
+                            <th scope="col">team</th>
+                            <th scope="col">points</th>
                         </tr>
                     </thead>
                     <tbody>
