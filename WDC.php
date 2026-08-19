@@ -33,17 +33,17 @@ include('includes/nav.php');
                         </tr>
                     </thead>
                     <tbody>
-                             <?php foreach ($results as $result): ?>
+                             <?php foreach ($wdc as $result): ?>
                                 <td><?= htmlspecialchars($result['championship_position']) ?></td>
                                 <td><?= htmlspecialchars($result['name']) ?></td>
                                 <td><?= htmlspecialchars($result['team']) ?></td>
                                 <td><?= htmlspecialchars($result['point']) ?></td>   
                                 </td>
                             </tr>
-                        <?php ?>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
-            <?php ?>
+            <?php endif; ?>
         </div>
         <div class="col-sm-1"></div>
     </div>

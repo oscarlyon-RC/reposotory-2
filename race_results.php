@@ -34,18 +34,18 @@ include('includes/nav.php');
                         </tr>
                     </thead>
                     <tbody>
-                          <?php foreach ($results as $result): ?>
+                          <?php foreach ($recent_races as $result): ?>
+                            <tr>
                                 <td><?= htmlspecialchars($result['race_number']) ?></td>
                                 <td><?= htmlspecialchars($result['race_name']) ?></td>
                                 <td><?= htmlspecialchars($result['winner']) ?></td>
                                 <td><?= htmlspecialchars($result['second']) ?></td>
                                 <td><?= htmlspecialchars($result['third']) ?></td>
-                                </td>
                             </tr>
-                        <?php ?>
+                        <?php endforeach;?>
                     </tbody>
                 </table>
-            <?php ?>
+            <?php endif; ?>
          </div>
         <div class="col-sm-1"></div>
     </div>
