@@ -20,7 +20,7 @@ include('includes/nav.php');
         <div class="col-sm-6 text-center">
             <h2 class="pb-4">Welcome back, <?php echo htmlspecialchars($_SESSION['firstname']); ?></h2>
             <a href="update_wdc.php"><button class="btn btn-danger btn-lg m-2">update wdc</button></a>
-            <a href="manage_loans.php"><button class="btn btn-primary btn-lg m-2">update race results</button></a>
+            <a href="update_race_results.php"><button class="btn btn-primary btn-lg m-2">update race results</button></a>
         </div>
         <div class="col-sm-3"></div>
     </div>
