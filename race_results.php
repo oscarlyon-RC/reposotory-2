@@ -38,14 +38,15 @@ include('includes/nav.php');
                                 <td><?= htmlspecialchars($result['race_number']) ?></td>
                                 <td><?= htmlspecialchars($result['race_name']) ?></td>
                                 <td><?= htmlspecialchars($result['winner']) ?></td>
-                                <td> 
+                                <td><?= htmlspecialchars($result['second']) ?></td>
+                                <td><?= htmlspecialchars($result['third']) ?></td>
                                 </td>
                             </tr>
                         <?php ?>
                     </tbody>
                 </table>
-            <?php endif; ?>
-        </div>
+            <?php ?>
+         </div>
         <div class="col-sm-1"></div>
     </div>
 </div>

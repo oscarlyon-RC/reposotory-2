@@ -6,7 +6,7 @@ require('includes/conn_1dt.php');
 // Anyone can see this page — no auth_check here. Only logging or
 // returning a loan requires being signed in.
 $stmt = $pdo->query("SELECT * FROM wdc");
-$loans = $stmt->fetchAll();
+$results = $stmt->fetchAll();
 
 include('includes/header.php');
 include('includes/nav.php');
@@ -33,13 +33,17 @@ include('includes/nav.php');
                         </tr>
                     </thead>
                     <tbody>
-                                   
+                             <?php foreach ($results as $result): ?>
+                                <td><?= htmlspecialchars($result['championship_position']) ?></td>
+                                <td><?= htmlspecialchars($result['name']) ?></td>
+                                <td><?= htmlspecialchars($result['team']) ?></td>
+                                <td><?= htmlspecialchars($result['point']) ?></td>   
                                 </td>
                             </tr>
                         <?php ?>
                     </tbody>
                 </table>
-            <?php endif; ?>
+            <?php ?>
         </div>
         <div class="col-sm-1"></div>
     </div>
