@@ -15,9 +15,9 @@ include('includes/nav.php');
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-            <h1 class="pt-5 pb-4 text-center">Current loans</h1>
+            <h1 class="pt-5 pb-4 text-center">World Drivers Championship</h1>
 
-            <?php if (!$wdc): ?>
+            <?php if (!$results): ?>
                 <p class="text-center">No results avalible</p>
             <?php else: ?>
                 <div class="pb-4">
@@ -33,11 +33,12 @@ include('includes/nav.php');
                         </tr>
                     </thead>
                     <tbody>
-                             <?php foreach ($wdc as $result): ?>
+                             <?php foreach ($results as $result): ?>
+                            <tr>
                                 <td><?= htmlspecialchars($result['championship_position']) ?></td>
                                 <td><?= htmlspecialchars($result['name']) ?></td>
                                 <td><?= htmlspecialchars($result['team']) ?></td>
-                                <td><?= htmlspecialchars($result['point']) ?></td>   
+                                <td><?= htmlspecialchars($result['points']) ?></td>   
                                 </td>
                             </tr>
                         <?php endforeach; ?>

@@ -15,7 +15,7 @@ include('includes/nav.php');
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
-            <h1 class="pt-5 pb-4 text-center">Current loans</h1>
+            <h1 class="pt-5 pb-4 text-center">2026 Race Results</h1>
 
             <?php if (!$recent_races): ?>
                 <p class="text-center">No results avalible</p>
