@@ -6,7 +6,7 @@ require('includes/conn_1dt.php');
 // Anyone can see this page — no auth_check here. Only logging or
 // returning a loan requires being signed in.
 $stmt = $pdo->query("SELECT * FROM recent_races");
-$loans = $stmt->fetchAll();
+$recent_races = $stmt->fetchAll();
 
 include('includes/header.php');
 include('includes/nav.php');
@@ -17,7 +17,7 @@ include('includes/nav.php');
         <div class="col-sm-10">
             <h1 class="pt-5 pb-4 text-center">Current loans</h1>
 
-            <?php if ($recent_races): ?>
+            <?php if (!$recent_races): ?>
                 <p class="text-center">No results avalible</p>
             <?php else: ?>
                 <div class="pb-4">
@@ -34,7 +34,11 @@ include('includes/nav.php');
                         </tr>
                     </thead>
                     <tbody>
-                                   
+                          <?php foreach ($results as $result): ?>
+                                <td><?= htmlspecialchars($result['race_number']) ?></td>
+                                <td><?= htmlspecialchars($result['race_name']) ?></td>
+                                <td><?= htmlspecialchars($result['winner']) ?></td>
+                                <td> 
                                 </td>
                             </tr>
                         <?php ?>

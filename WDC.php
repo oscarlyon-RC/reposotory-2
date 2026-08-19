@@ -17,7 +17,7 @@ include('includes/nav.php');
         <div class="col-sm-10">
             <h1 class="pt-5 pb-4 text-center">Current loans</h1>
 
-            <?php if ($wdc): ?>
+            <?php if (!$wdc): ?>
                 <p class="text-center">No results avalible</p>
             <?php else: ?>
                 <div class="pb-4">
