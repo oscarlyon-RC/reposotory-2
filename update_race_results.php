@@ -3,37 +3,49 @@ session_start();
 require('includes/auth_check.php');
 require('includes/conn_1dt.php');
 
-$championship_position     = trim($_POST['championship_position'] ?? '');
-$name                      = trim($_POST['name'] ?? '');
-$team                      = trim($_POST['team'] ?? '');
-$points                    = trim($_POST['points'] ?? '');
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: submit_race_results.php');
+    exit;
+}
+
+
+$race_number  = trim($_POST['race_number'] ?? '');
+$race_name    = trim($_POST['race_name'] ?? '');
+$winner       = trim($_POST['winner'] ?? '');
+$second       = trim($_POST['second'] ?? '');
+$third        = trim($_POST['third'] ?? '');
 $errors                    = [];
 
-if ($championship_position === '') {
-    $errors[] = 'Please enter a championship position.';
+if ($race_number === '') {
+    $errors[] = 'Please enter the races number';
 }
-if ($name === '') {
-    $errors[] = 'Please enter a drivers name';
+if ($race_name === '') {
+    $errors[] = 'Please enter the name of the race';
 }
-if ($team === '') {
-    $errors[] = 'please enter a drivers team';
+if ($winner === '') {
+    $errors[] = 'please enter a winner of the race';
 }
-if ($points === '') {
-    $errors[] = 'Please enter a drivers points';
+if ($second === '') {
+    $errors[] = 'Please enter the second place driver';
+}
+if ($third === '') {
+    $errors[] = 'Please enter the third place driver';
 }
 
 
 
 
-$sql = "INSERT INTO wdc (championship_position, name, team, points)
-        VALUES (:championship position, :name, :team, :points)";
+$sql = "INSERT INTO race_results (race_number, race_name, winner, second, third)
+        VALUES (:race_number, :race_name, :winner, :second, :third)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-    ':championship position' => $championship_position,
-    ':name'                  => $name,
-    ':team'                  => $team,
-    ':points'                => $points,
+    ':race_number'  => $championship_position,
+    ':race_name'    => $race_name,
+    ':winner'       => $winner,
+    ':second'       => $second,
+    ':third'        => $third,
 ]);
 
-header('Location: WDC.php?logged=1');
+header('Location: race_results.php?logged=1');
 exit;
