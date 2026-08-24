@@ -40,19 +40,16 @@ include('includes/nav.php');
                            value="<?= htmlspecialchars($old['name'] ?? '') ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="name" class="form-label">name</label>
-                    <input type="text" class="form-control" id="name" name="name"
-                           value="<?= htmlspecialchars($old['name'] ?? '') ?>">
+                    <label for="team" class="form-label">team</label>
+                    <input type="text" class="form-control" id="team" name="team"
+                           value="<?= htmlspecialchars($old['team'] ?? '') ?>">
                 </div>
-
-
-
-
-
-
-
-
-                <button type="submit" class="btn btn-primary">Log loan</button>
+                <div class="mb-3">
+                    <label for="points" class="form-label">championship points</label>
+                    <input type="text" class="form-control" id="points" name="points"
+                           value="<?= htmlspecialchars($old['points'] ?? '') ?>">
+                </div>
+                <button type="submit" class="btn btn-primary">update standings</button>
             </form>
         </div>
         <div class="col-sm-3"></div>
