@@ -32,6 +32,7 @@ include('includes/nav.php');
                 <div class="mb-3">
                     <label for="race_number" class="form-label">race number</label>
                     <input type="text" class="form-control" id="race_number" name="race_number"
+                    
                            value="<?= htmlspecialchars($old['race_number'] ?? '') ?>">
                 </div>
                 <div class="mb-3">
@@ -56,7 +57,7 @@ include('includes/nav.php');
                 </div>
 
 
-                <button type="submit" class="btn btn-primary">upadte races</button>
+                <button type="submit" class="btn btn-primary">update races</button>
             </form>
         </div>
         <div class="col-sm-3"></div>
