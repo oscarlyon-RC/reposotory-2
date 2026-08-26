@@ -40,7 +40,7 @@ $sql = "INSERT INTO race_results (race_number, race_name, winner, second, third)
         VALUES (:race_number, :race_name, :winner, :second, :third)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-    ':race_number'  => $championship_position,
+    ':race_number'  => $race_number,
     ':race_name'    => $race_name,
     ':winner'       => $winner,
     ':second'       => $second,
