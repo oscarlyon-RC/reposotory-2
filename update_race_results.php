@@ -36,7 +36,7 @@ if ($third === '') {
 
 
 
-$sql = "INSERT INTO race_results (race_number, race_name, winner, second, third)
+$sql = "INSERT INTO recent_races (race_number, race_name, winner, second, third)
         VALUES (:race_number, :race_name, :winner, :second, :third)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
